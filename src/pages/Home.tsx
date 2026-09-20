@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="relative w-full h-full flex flex-col items-center">
       {/* Background Hero Layer */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+      <div className="absolute inset-0 z-0">
         <NodeNetwork />
       </div>
       

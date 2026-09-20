@@ -74,8 +74,9 @@ export function NodeNetwork() {
     // Mouse interaction
     let mouse = { x: -1000, y: -1000 }
     const onMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX
-      mouse.y = e.clientY
+      // Adjust for window scroll since canvas is absolutely positioned at top of document
+      mouse.x = e.clientX + window.scrollX
+      mouse.y = e.clientY + window.scrollY
     }
     const onMouseLeave = () => {
       mouse.x = -1000
@@ -140,7 +141,7 @@ export function NodeNetwork() {
   return (
     <canvas 
       ref={canvasRef} 
-      className="absolute inset-0 w-full h-full pointer-events-none opacity-40 z-0" 
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-80 z-0" 
     />
   )
 }
