@@ -1,7 +1,6 @@
 import teamData from "../data/team.json"
 import { motion } from "framer-motion"
 import { Tabs } from "../components/ui/tabs"
-import { Card } from "../components/ui/card"
 import Tilt from "react-parallax-tilt"
 import { Mail, BookOpen, Globe } from "lucide-react"
 
