@@ -1,0 +1,14 @@
+[
+  {
+    "id": "c1",
+    "partner": "Google Research",
+    "description": "Collaborative study on low-resource language models.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+  },
+  {
+    "id": "c2",
+    "partner": "NED Alumni Network",
+    "description": "Funding and mentorship for undergraduate AI projects.",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f6/NEDUET_logo.svg/1200px-NEDUET_logo.svg.png"
+  }
+]

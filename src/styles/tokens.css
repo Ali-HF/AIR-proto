@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+/* Mintlify-inspired core tokens */
+:root {
+  /* Default: Mint Light */
+  --bg-main: 0 0% 98%;      /* #FAFAFA */
+  --bg-soft: 240 5% 96%;    /* #F4F4F5 */
+  --text-main: 240 10% 4%;  /* #09090B */
+  --text-sub: 215 16% 47%;  /* #64748B */
+  --border-light: 220 13% 91%; /* #E5E7EB */
+  
+  --primary-accent: 160 84% 39%; /* #10B981 */
+  --primary-hover: 163 94% 24%;  /* #047857 */
+  
+  --radius-btn: 9999px; /* Pill */
+  --radius-card: 8px;
+  --radius-window: 12px;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+}
+
+.theme-mint-dark {
+  --bg-main: 230 25% 6%;    /* #090A0F */
+  --bg-soft: 230 18% 9%;    /* #12131A */
+  --text-main: 210 40% 98%; /* #F9FAFB */
+  --text-sub: 215 20% 65%;  /* #9CA3AF */
+  --border-light: 215 28% 17%; /* #1F2937 */
+  
+  --primary-accent: 160 84% 39%;
+  --primary-hover: 158 75% 47%; /* #34D399 */
+}
+
+/* Background Patterns */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, hsl(var(--border-light)) 1px, transparent 1px),
+                    linear-gradient(to bottom, hsl(var(--border-light)) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+.bg-dot-pattern {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, hsl(var(--border-light)) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}

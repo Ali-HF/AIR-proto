@@ -1,0 +1,18 @@
+[
+  {
+    "id": "b1",
+    "title": "Why Urdu Needs a Specialized LLM",
+    "author": "Dr. Sarah Chen",
+    "date": "2026-09-15",
+    "excerpt": "Exploring the linguistic complexities of Urdu that generic LLMs fail to capture.",
+    "link": "#"
+  },
+  {
+    "id": "b2",
+    "title": "A Day in the Life at AIR Lab",
+    "author": "Jane Doe",
+    "date": "2026-08-20",
+    "excerpt": "Behind the scenes of our robotics and vision experiments.",
+    "link": "#"
+  }
+]

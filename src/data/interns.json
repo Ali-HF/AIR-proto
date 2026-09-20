@@ -1,0 +1,16 @@
+[
+  {
+    "id": "i1",
+    "name": "Alex Johnson",
+    "period": "Summer 2025",
+    "project": "Drone Pathfinding",
+    "currentRole": "SWE at Google"
+  },
+  {
+    "id": "i2",
+    "name": "Maria Garcia",
+    "period": "Winter 2025",
+    "project": "Medical Image Segmentation",
+    "currentRole": "PhD Candidate at MIT"
+  }
+]

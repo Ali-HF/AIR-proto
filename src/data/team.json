@@ -1,0 +1,14 @@
+[
+  { "id": "t1", "name": "Dr. Sarah Chen", "role": "Faculty Member", "researchAreas": ["Computer Vision", "Deep Learning"], "latentCoordinates": { "x": 10, "y": 20 }, "image": "https://i.pravatar.cc/300?img=1" },
+  { "id": "t2", "name": "Prof. Alan Turing", "role": "Faculty Member", "researchAreas": ["Theory", "AI Safety"], "latentCoordinates": { "x": 80, "y": 30 }, "image": "https://i.pravatar.cc/300?img=2" },
+  { "id": "t3", "name": "Jane Doe", "role": "Postgraduate Student", "researchAreas": ["NLP", "Generative AI"], "latentCoordinates": { "x": 40, "y": 80 }, "image": "https://i.pravatar.cc/300?img=3" },
+  { "id": "t4", "name": "John Smith", "role": "Undergraduate Student", "researchAreas": ["Robotics"], "latentCoordinates": { "x": 60, "y": 60 }, "image": "https://i.pravatar.cc/300?img=4" },
+  { "id": "t5", "name": "Emily Fox", "role": "Faculty Member", "researchAreas": ["Statistics", "ML"], "latentCoordinates": { "x": 50, "y": 50 }, "image": "https://i.pravatar.cc/300?img=5" },
+  { "id": "t6", "name": "Ron Dror", "role": "Faculty Member", "researchAreas": ["Computational Biology"], "latentCoordinates": { "x": 20, "y": 40 }, "image": "https://i.pravatar.cc/300?img=6" },
+  { "id": "t7", "name": "Chelsea Finn", "role": "Faculty Member", "researchAreas": ["Robotics", "Meta-Learning"], "latentCoordinates": { "x": 70, "y": 70 }, "image": "https://i.pravatar.cc/300?img=7" },
+  { "id": "t8", "name": "Noah Goodman", "role": "Faculty Member", "researchAreas": ["Cognitive Science"], "latentCoordinates": { "x": 30, "y": 90 }, "image": "https://i.pravatar.cc/300?img=8" },
+  { "id": "t9", "name": "Gill Bejerano", "role": "Faculty Member", "researchAreas": ["Genomics"], "latentCoordinates": { "x": 90, "y": 20 }, "image": "https://i.pravatar.cc/300?img=9" },
+  { "id": "t10", "name": "Stefano Ermon", "role": "Faculty Member", "researchAreas": ["Sustainability", "AI"], "latentCoordinates": { "x": 10, "y": 90 }, "image": "https://i.pravatar.cc/300?img=10" },
+  { "id": "t11", "name": "Yejin Choi", "role": "Faculty Member", "researchAreas": ["NLP", "Commonsense"], "latentCoordinates": { "x": 50, "y": 10 }, "image": "https://i.pravatar.cc/300?img=11" },
+  { "id": "t12", "name": "Emma Brunskill", "role": "Faculty Member", "researchAreas": ["Reinforcement Learning"], "latentCoordinates": { "x": 80, "y": 50 }, "image": "https://i.pravatar.cc/300?img=12" }
+]

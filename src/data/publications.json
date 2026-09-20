@@ -1,0 +1,20 @@
+[
+  {
+    "id": "pub1",
+    "title": "Attention is All You Need (Parody Edition)",
+    "authors": "Turing, A., Chen, S.",
+    "venue": "NeurIPS",
+    "year": 2026,
+    "link": "#",
+    "type": "paper"
+  },
+  {
+    "id": "pub2",
+    "title": "Scaling Laws for Urdu Generative Models",
+    "authors": "Doe, J., Smith, J.",
+    "venue": "ACL",
+    "year": 2025,
+    "link": "#",
+    "type": "paper"
+  }
+]
