@@ -110,14 +110,19 @@ export function NodeNetwork() {
           }
         }
         
-        // Mouse connection
+        // Mouse connection and attraction
         const mdx = particles[i].x - mouse.x
         const mdy = particles[i].y - mouse.y
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy)
-        if (mDist < 150) {
+        if (mDist < 200) {
+          // Attract nodes to mouse (attach effect)
+          const force = (200 - mDist) / 200
+          particles[i].x -= (mdx / mDist) * force * 2
+          particles[i].y -= (mdy / mDist) * force * 2
+
           ctx.beginPath()
-          ctx.strokeStyle = colorPrefix + (1 - mDist / 150) * 0.8 + ")"
-          ctx.lineWidth = 1.5
+          ctx.strokeStyle = `${colorPrefix}${1 - mDist / 200})`
+          ctx.lineWidth = 1
           ctx.moveTo(particles[i].x, particles[i].y)
           ctx.lineTo(mouse.x, mouse.y)
           ctx.stroke()
