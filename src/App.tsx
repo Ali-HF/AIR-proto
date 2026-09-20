@@ -16,7 +16,7 @@ import Collaborations from "./pages/Collaborations"
 function App() {
   return (
     <ThemeProvider defaultTheme="default">
-      <BrowserRouter>
+      <BrowserRouter basename="/AIR-proto/">
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
