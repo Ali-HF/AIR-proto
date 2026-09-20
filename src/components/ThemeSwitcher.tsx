@@ -11,6 +11,7 @@ export function ThemeSwitcher() {
     { id: "theme-aurora", name: "Aurora" },
     { id: "theme-ember", name: "Ember" },
     { id: "theme-ned", name: "NED Signature" },
+    { id: "theme-paper-lab", name: "Paper Lab" },
   ]
 
   return (

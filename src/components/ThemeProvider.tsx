@@ -7,6 +7,7 @@ export type Theme =
   | "theme-aurora" 
   | "theme-ember" 
   | "theme-ned"
+  | "theme-paper-lab"
 
 type ThemeProviderProps = {
   children: React.ReactNode
@@ -40,7 +41,7 @@ export function ThemeProvider({
     const root = window.document.documentElement
     
     // Remove all theme classes
-    const themes = ["theme-mint-dark", "theme-terminal", "theme-aurora", "theme-ember", "theme-ned"]
+    const themes = ["theme-mint-dark", "theme-terminal", "theme-aurora", "theme-ember", "theme-ned", "theme-paper-lab"]
     root.classList.remove(...themes)
 
     if (theme !== "default") {
