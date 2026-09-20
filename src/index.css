@@ -209,3 +209,10 @@
     letter-spacing: -0.02em;
   }
 }
+
+/* Hide default cursor on desktop for custom cursor */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

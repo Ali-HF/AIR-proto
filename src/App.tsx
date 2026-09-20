@@ -1,6 +1,7 @@
 import { ThemeProvider } from "./components/ThemeProvider"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Layout } from "./components/Layout"
+import { CustomCursor } from "./components/CustomCursor"
 
 // Lazy load or import pages
 import Home from "./pages/Home"
@@ -16,7 +17,8 @@ import Collaborations from "./pages/Collaborations"
 function App() {
   return (
     <ThemeProvider defaultTheme="default">
-      <BrowserRouter basename="/AIR-proto/">
+      <Router basename="/AIR-proto/">
+        <CustomCursor />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
