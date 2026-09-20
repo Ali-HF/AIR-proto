@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { SplineHero } from "../components/SplineHero"
+import { NodeNetwork } from "../components/NodeNetwork"
 import { ArrowRight, Brain, Zap, Code, Database, LineChart } from "lucide-react"
 import CountUpModule from "react-countup"
 import MarqueeModule from "react-fast-marquee"
@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <div className="relative w-full h-full flex flex-col items-center">
       {/* Background Hero Layer */}
-      <div className="absolute inset-0 z-0 opacity-80 pointer-events-auto">
-        <SplineHero />
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <NodeNetwork />
       </div>
       
       {/* Hero Section */}
