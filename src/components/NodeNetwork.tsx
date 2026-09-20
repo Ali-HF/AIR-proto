@@ -21,17 +21,14 @@ export function NodeNetwork() {
     window.addEventListener("resize", resize)
     resize()
 
-    // Determine colors based on theme heuristically or just use CSS variables
-    // For simplicity, we extract colors from computed style or use a fixed one per theme
-    const style = getComputedStyle(document.documentElement)
-    
     // Convert HSL to rgb/rgba for canvas
     const getPrimaryColor = () => {
-       if (theme === "theme-paper-lab") return "rgba(220, 20, 60, " // Cardinal Red approx
-       if (theme === "theme-terminal") return "rgba(0, 255, 65, "
-       if (theme === "theme-ned") return "rgba(255, 204, 0, "
-       if (theme === "theme-aurora") return "rgba(200, 20, 150, "
-       if (theme === "theme-ember") return "rgba(220, 100, 30, "
+       const currentTheme = theme as string;
+       if (currentTheme === "theme-paper-lab") return "rgba(220, 20, 60, " // Cardinal Red approx
+       if (currentTheme === "theme-terminal") return "rgba(0, 255, 65, "
+       if (currentTheme === "theme-ned") return "rgba(255, 204, 0, "
+       if (currentTheme === "theme-aurora") return "rgba(200, 20, 150, "
+       if (currentTheme === "theme-ember") return "rgba(220, 100, 30, "
        return "rgba(150, 100, 255, " // Midnight (violet approx)
     }
 
@@ -43,8 +40,8 @@ export function NodeNetwork() {
       radius: number
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * canvas!.width
+        this.y = Math.random() * canvas!.height
         this.vx = (Math.random() - 0.5) * 1
         this.vy = (Math.random() - 0.5) * 1
         this.radius = Math.random() * 2 + 1
@@ -54,8 +51,8 @@ export function NodeNetwork() {
         this.x += this.vx
         this.y += this.vy
         
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1
+        if (this.x < 0 || this.x > canvas!.width) this.vx *= -1
+        if (this.y < 0 || this.y > canvas!.height) this.vy *= -1
       }
 
       draw(ctx: CanvasRenderingContext2D, colorPrefix: string) {

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
 import { NodeNetwork } from "../components/NodeNetwork"
-import { Link } from "react-router-dom"
-import { ArrowRight, Brain, Zap, GitPullRequest, Code, Database, LineChart } from "lucide-react"
+import { ArrowRight, Brain, Zap, Code, Database, LineChart } from "lucide-react"
 import CountUpModule from "react-countup"
 import MarqueeModule from "react-fast-marquee"
 import { Button } from "../components/ui/button"
