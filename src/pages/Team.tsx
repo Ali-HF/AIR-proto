@@ -12,7 +12,7 @@ const ProfileCard = ({ member, i }: { member: any, i: number }) => (
     className="flex flex-col items-center text-center group"
   >
     {/* Hexagon Picture */}
-    <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.05} transitionSpeed={2000} className="mb-6">
+    <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.05} transitionSpeed={2000}>
     <div 
       className="w-40 h-[184px] md:w-52 md:h-[240px] bg-muted relative transition-transform duration-500"
       style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
@@ -69,7 +69,7 @@ const HoneycombGrid = ({ members }: { members: typeof teamData }) => {
           <div 
             key={rowIndex} 
             className="flex justify-center gap-4"
-            style={{ marginTop: rowIndex > 0 ? '-60px' : '0' }}
+            style={{ marginTop: rowIndex > 0 ? '-66px' : '0' }}
           >
             {row.map((member, idx) => (
               <ProfileCard key={member.id} member={member} i={rowIndex * 3 + idx} />
@@ -84,7 +84,7 @@ const HoneycombGrid = ({ members }: { members: typeof teamData }) => {
           <div 
             key={rowIndex} 
             className="flex justify-center gap-2"
-            style={{ marginTop: rowIndex > 0 ? '-46px' : '0' }}
+            style={{ marginTop: rowIndex > 0 ? '-50px' : '0' }}
           >
             {row.map((member, idx) => (
               <ProfileCard key={member.id} member={member} i={rowIndex * 2 + idx} />
