@@ -32,7 +32,7 @@ function App() {
             <Route path="collaborations" element={<Collaborations />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ThemeProvider>
   )
 }
