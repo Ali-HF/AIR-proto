@@ -2,6 +2,7 @@ import teamData from "../data/team.json"
 import { motion } from "framer-motion"
 import { Tabs } from "../components/ui/tabs"
 import { Card } from "../components/ui/card"
+import Tilt from "react-parallax-tilt"
 import { Mail, BookOpen, Globe } from "lucide-react"
 
 const ProfileCard = ({ member, i }: { member: any, i: number }) => (
@@ -12,17 +13,19 @@ const ProfileCard = ({ member, i }: { member: any, i: number }) => (
     className="flex flex-col items-center text-center group"
   >
     {/* Hexagon Picture */}
-    <div 
-      className="w-48 h-56 md:w-56 md:h-64 mb-6 bg-muted relative transition-transform duration-500 group-hover:scale-105"
-      style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
-    >
-      <img 
-        src={member.image} 
-        alt={member.name} 
-        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-      />
-      <div className="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    </div>
+    <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} scale={1.05} transitionSpeed={2000} className="mb-6">
+      <div 
+        className="w-48 h-56 md:w-56 md:h-64 bg-muted relative transition-transform duration-500"
+        style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
+      >
+        <img 
+          src={member.image} 
+          alt={member.name} 
+          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+        />
+        <div className="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </div>
+    </Tilt>
 
     {/* Info */}
     <h3 className="text-xl font-semibold tracking-tight mb-1">{member.name}</h3>

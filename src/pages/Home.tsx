@@ -1,5 +1,7 @@
 import { motion } from "framer-motion"
 import { NodeNetwork } from "../components/NodeNetwork"
+import { FloatingTechObjects } from "../components/FloatingTechObjects"
+import Tilt from "react-parallax-tilt"
 import { ArrowRight, Brain, Zap, Code, Database, LineChart } from "lucide-react"
 import CountUpModule from "react-countup"
 import MarqueeModule from "react-fast-marquee"
@@ -15,6 +17,9 @@ export default function Home() {
 
   return (
     <div className="relative w-full h-full flex flex-col items-center">
+      {/* Background Tech Objects */}
+      <FloatingTechObjects />
+      
       {/* Background Hero Layer */}
       <div className="absolute inset-0 z-0">
         <NodeNetwork />
@@ -127,80 +132,90 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
           {/* Block 1: Large */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-            className="md:col-span-2 md:row-span-2 rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] transition-all duration-300"
-          >
-            <div className="absolute top-8 right-8 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
-              <Brain className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500" />
-            <h3 className="text-2xl font-bold mb-2">Foundational Models</h3>
-            <p className="text-muted-foreground max-w-md">Developing state-of-the-art LLMs optimized for regional languages and specialized domain tasks.</p>
-          </motion.div>
+          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2500} className="md:col-span-2 md:row-span-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5 }}
+              className="h-full w-full rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.05)] transition-all duration-300"
+            >
+              <div className="absolute top-8 right-8 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
+                <Brain className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-500" />
+              <h3 className="text-2xl font-bold mb-2">Foundational Models</h3>
+              <p className="text-muted-foreground max-w-md">Developing state-of-the-art LLMs optimized for regional languages and specialized domain tasks.</p>
+            </motion.div>
+          </Tilt>
           
           {/* Block 2 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-          >
-            <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
-              <Zap className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Edge AI</h3>
-            <p className="text-muted-foreground text-sm">Deploying high-performance models on constrained hardware.</p>
-          </motion.div>
+          <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} scale={1.05} transitionSpeed={2500}>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="h-full w-full rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
+                <Zap className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Edge AI</h3>
+              <p className="text-muted-foreground text-sm">Deploying high-performance models on constrained hardware.</p>
+            </motion.div>
+          </Tilt>
           
           {/* Block 3 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-          >
-             <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
-              <Code className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Open Source</h3>
-            <p className="text-muted-foreground text-sm">Contributing tools and datasets back to the community.</p>
-          </motion.div>
+          <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} scale={1.05} transitionSpeed={2500}>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="h-full w-full rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+            >
+               <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
+                <Code className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Open Source</h3>
+              <p className="text-muted-foreground text-sm">Contributing tools and datasets back to the community.</p>
+            </motion.div>
+          </Tilt>
 
           {/* Block 4 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-          >
-             <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
-              <Database className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Data Curation</h3>
-            <p className="text-muted-foreground text-sm">Large scale ethically sourced datasets.</p>
-          </motion.div>
+          <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} scale={1.05} transitionSpeed={2500}>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="h-full w-full rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+            >
+               <div className="absolute top-6 right-6 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
+                <Database className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Data Curation</h3>
+              <p className="text-muted-foreground text-sm">Large scale ethically sourced datasets.</p>
+            </motion.div>
+          </Tilt>
 
           {/* Block 5 */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-2 rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-          >
-            <div className="absolute top-6 right-8 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
-              <LineChart className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
-            </div>
-            <h3 className="text-2xl font-bold mb-2">AI Safety & Alignment</h3>
-            <p className="text-muted-foreground max-w-md">Ensuring robust, unbiased, and safe deployment of intelligent systems in critical environments.</p>
-          </motion.div>
+          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.02} transitionSpeed={2500} className="md:col-span-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="h-full w-full rounded-[var(--radius-card)] border bg-card p-8 flex flex-col justify-end relative overflow-hidden group hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+            >
+              <div className="absolute top-6 right-8 text-primary opacity-50 group-hover:opacity-100 transition-opacity">
+                <LineChart className="w-12 h-12 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">AI Safety & Alignment</h3>
+              <p className="text-muted-foreground max-w-md">Ensuring robust, unbiased, and safe deployment of intelligent systems in critical environments.</p>
+            </motion.div>
+          </Tilt>
         </div>
       </section>
     </div>
