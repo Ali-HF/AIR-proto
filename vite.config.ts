@@ -10,6 +10,11 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  server: {
+    watch: {
+      ignored: ['**/images/**', '**/public/pfp/**', '**/*.crdownload'],
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

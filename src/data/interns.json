@@ -1,16 +1,68 @@
 [
   {
-    "id": "i1",
-    "name": "Alex Johnson",
-    "period": "Summer 2025",
-    "project": "Drone Pathfinding",
-    "currentRole": "SWE at Google"
+    "id": "pi1",
+    "name": "Muhammad Ahmed Raza",
+    "email": "raza4520222@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/muhammad-ahmed-raza-8130072bb"
   },
   {
-    "id": "i2",
-    "name": "Maria Garcia",
-    "period": "Winter 2025",
-    "project": "Medical Image Segmentation",
-    "currentRole": "PhD Candidate at MIT"
+    "id": "pi2",
+    "name": "Wania Manzoor",
+    "email": "manzoor4501868@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/wania-manzoor-"
+  },
+  {
+    "id": "pi3",
+    "name": "Muhammad Zohaib Khan",
+    "email": "khan4504302@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/muhammad-zohaib-khan-3bab09203/"
+  },
+  {
+    "id": "pi4",
+    "name": "Muhammad Taha",
+    "email": "taha4605051@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/muhammad-taha-5b9546285"
+  },
+  {
+    "id": "pi5",
+    "name": "Abdul Rehman",
+    "email": "rehman4605578@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/abdul-rehman-21a7752a7"
+  },
+  {
+    "id": "pi6",
+    "name": "Fatima Azeemi",
+    "email": "azeemi4502943@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/fatima-azeemi-466988266"
+  },
+  {
+    "id": "pi7",
+    "name": "Muhammad Saim Asim",
+    "email": "asim4606091@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/muhammad-saim-asim-1695b72b8"
+  },
+  {
+    "id": "pi8",
+    "name": "Faisal Shahid",
+    "email": "shahid4500192@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/faisalshahid03/"
+  },
+  {
+    "id": "pi9",
+    "name": "Iqra Iqbal",
+    "email": "iqbal4503948@cloud.neduet.edu.pk",
+    "linkedin": "https://pk.linkedin.com/in/iqra-iqbal-a2234b271"
+  },
+  {
+    "id": "pi10",
+    "name": "Faiq Ahmed",
+    "email": "ahmed4603833@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/faiq-ahmed1/"
+  },
+  {
+    "id": "pi11",
+    "name": "Unaiza Asif",
+    "email": "asif4601743@cloud.neduet.edu.pk",
+    "linkedin": "https://www.linkedin.com/in/unaiza-asif"
   }
 ]

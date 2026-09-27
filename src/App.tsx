@@ -16,7 +16,7 @@ import Collaborations from "./pages/Collaborations"
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="default">
+    <ThemeProvider defaultTheme="theme-paper-lab">
       <Router basename="/AIR-proto/">
         <CustomCursor />
         <Routes>

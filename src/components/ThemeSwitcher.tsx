@@ -12,6 +12,10 @@ export function ThemeSwitcher() {
     { id: "theme-ember", name: "Ember" },
     { id: "theme-ned", name: "NED Signature" },
     { id: "theme-paper-lab", name: "Paper Lab" },
+    { id: "theme-space", name: "Deep Space" },
+    { id: "theme-neural", name: "Neural Net" },
+    { id: "theme-robotics", name: "Robotics" },
+    { id: "theme-bio", name: "Bio-Tech" },
   ]
 
   return (

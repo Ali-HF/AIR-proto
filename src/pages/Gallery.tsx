@@ -1,29 +1,32 @@
-import galleryData from "../data/gallery.json"
-import { motion } from "framer-motion"
+import { Camera, Image as ImageIcon } from "lucide-react"
 
 export default function Gallery() {
   return (
-    <div className="container mx-auto px-6 py-24 max-w-7xl">
-      <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-center">Life at AIR Lab</h1>
-        <p className="text-muted-foreground text-lg text-center max-w-2xl mx-auto">Behind the scenes at our research facility.</p>
+    <div className="container mx-auto px-6 py-24 max-w-7xl min-h-[calc(100vh-4rem)]">
+      <div className="mb-10 text-center max-w-2xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-muted/50 text-xs font-mono font-medium text-primary mb-4">
+          <Camera className="w-3.5 h-3.5" />
+          Lab Media
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
+          Gallery
+        </h1>
+        <p className="text-muted-foreground text-base md:text-lg">
+          Pictures and moments from the Artificial Intelligence Research Lab.
+        </p>
       </div>
-      
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
-        {galleryData.map((item, i) => (
-          <motion.div 
-            key={item.id}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.1 }}
-            className={`relative group overflow-hidden rounded-xl ${item.span} bg-muted`}
-          >
-            <img src={item.url} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
-              <h3 className="text-xl font-display font-bold text-foreground">{item.title}</h3>
-            </div>
-          </motion.div>
-        ))}
+
+      <div className="p-16 text-center rounded-2xl border border-dashed bg-muted/20 max-w-3xl mx-auto">
+        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+          <ImageIcon className="w-7 h-7 opacity-80" />
+        </div>
+        <h3 className="text-xl font-bold mb-2">Gallery of Pictures</h3>
+        <p className="text-sm font-mono text-muted-foreground max-w-md mx-auto mb-2">
+          Images only — no text content. Pending image upload.
+        </p>
+        <p className="text-xs text-muted-foreground/80">
+          Photographs and event captures will be showcased here once media files are provided.
+        </p>
       </div>
     </div>
   )

@@ -8,6 +8,10 @@ export type Theme =
   | "theme-ember" 
   | "theme-ned"
   | "theme-paper-lab"
+  | "theme-space"
+  | "theme-neural"
+  | "theme-robotics"
+  | "theme-bio"
 
 type ThemeProviderProps = {
   children: React.ReactNode
@@ -21,7 +25,7 @@ type ThemeProviderState = {
 }
 
 const initialState: ThemeProviderState = {
-  theme: "default",
+  theme: "theme-paper-lab",
   setTheme: () => null,
 }
 
@@ -29,7 +33,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
   children,
-  defaultTheme = "default",
+  defaultTheme = "theme-paper-lab",
   storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
@@ -41,7 +45,7 @@ export function ThemeProvider({
     const root = window.document.documentElement
     
     // Remove all theme classes
-    const themes = ["theme-mint-dark", "theme-terminal", "theme-aurora", "theme-ember", "theme-ned", "theme-paper-lab"]
+    const themes = ["theme-mint-dark", "theme-terminal", "theme-aurora", "theme-ember", "theme-ned", "theme-paper-lab", "theme-space", "theme-neural", "theme-robotics", "theme-bio"]
     root.classList.remove(...themes)
 
     if (theme !== "default") {
