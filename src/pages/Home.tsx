@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { NodeNetwork } from "../components/NodeNetwork"
 import { FloatingTechObjects } from "../components/FloatingTechObjects"
+import { Logo3D } from "../components/Logo3D"
 import { ArrowRight, BookOpen, Building2, Globe2, ShieldCheck, Users, GraduationCap } from "lucide-react"
 import { Button } from "../components/ui/button"
 
@@ -44,8 +45,13 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto flex flex-col items-center"
         >
+          {/* Interactive 360° Draggable 3D AIR Lab Logo */}
+          <div className="mb-4">
+            <Logo3D size={170} />
+          </div>
+
           <div className="inline-flex items-center rounded-full border bg-muted/50 px-3.5 py-1 text-xs font-mono font-medium mb-6">
             <span className="flex h-2 w-2 rounded-full bg-primary mr-2" />
             NED University of Engineering & Technology
