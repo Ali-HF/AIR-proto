@@ -1,85 +1,139 @@
-import internsData from "../data/interns.json"
-import { motion } from "framer-motion"
-import { Mail, History, ExternalLink } from "lucide-react"
-
-const LinkedinIcon = ({ className = "w-3.5 h-3.5" }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z" />
-  </svg>
-)
+import { UserCheck, GraduationCap, Building2, Quote, BookOpen } from 'lucide-react'
+import internsData from '../data/interns.json'
+import Badge from '../components/ui/Badge'
+import Button from '../components/ui/Button'
+import SectionReveal from '../components/ui/SectionReveal'
 
 export default function Interns() {
   return (
-    <div className="container mx-auto px-6 py-24 max-w-7xl min-h-[calc(100vh-4rem)]">
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-muted/50 text-xs font-mono font-medium text-primary mb-4">
-            <History className="w-3.5 h-3.5" />
-            Alumni & Past Cohorts
+    <div className="min-h-screen pt-16 sm:pt-24 pb-28 px-6 max-w-[1200px] mx-auto relative font-sans">
+      {/* Header */}
+      <div className="mb-14 text-left max-w-3xl">
+        <SectionReveal delay={0}>
+          <div className="mb-4">
+            <Badge variant="white" icon={<UserCheck className="w-3.5 h-3.5" />}>
+              ALUMNI TRAJECTORY & FELLOWS
+            </Badge>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">
-            Previous Research Interns
-          </h1>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl">
-            Alumni who contributed to research, development, and experiments at AIR Lab.
-          </p>
-        </div>
+        </SectionReveal>
 
-        <div className="overflow-x-auto rounded-xl border bg-card shadow-sm">
-          <table className="w-full text-left text-sm">
-            <thead className="border-b bg-muted/50 text-xs font-mono uppercase tracking-wider text-muted-foreground">
-              <tr>
-                <th className="py-4 px-6 font-semibold">#</th>
-                <th className="py-4 px-6 font-semibold">Name</th>
-                <th className="py-4 px-6 font-semibold">Institutional Email</th>
-                <th className="py-4 px-6 font-semibold text-right">LinkedIn Profile</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {internsData.map((intern, idx) => (
-                <tr
-                  key={intern.id}
-                  className="hover:bg-muted/30 transition-colors group"
-                >
-                  <td className="py-4 px-6 font-mono text-xs text-muted-foreground">
-                    {(idx + 1).toString().padStart(2, "0")}
-                  </td>
-                  <td className="py-4 px-6 font-medium text-foreground group-hover:text-primary transition-colors">
-                    {intern.name}
-                  </td>
-                  <td className="py-4 px-6 font-mono text-xs text-muted-foreground">
-                    <a
-                      href={`mailto:${intern.email}`}
-                      className="hover:underline inline-flex items-center gap-2"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-muted-foreground/60" />
-                      {intern.email}
-                    </a>
-                  </td>
-                  <td className="py-4 px-6 text-right">
-                    {intern.linkedin && (
-                      <a
-                        href={intern.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
-                      >
-                        <LinkedinIcon className="w-3.5 h-3.5" />
-                        <span>Profile</span>
-                        <ExternalLink className="w-3 h-3 text-muted-foreground/60" />
-                      </a>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <SectionReveal delay={0.08}>
+          <h1 className="font-head font-medium text-[var(--ink)] mb-3 tracking-tight">
+            Research Interns & Alumni
+          </h1>
+        </SectionReveal>
+
+        <SectionReveal delay={0.16}>
+          <p className="text-[17px] sm:text-[18px] text-[var(--ink-2)] leading-relaxed font-normal">
+            Where our former research fellows are now — from PhD programs at MIT CSAIL to engineering at Google DeepMind and NVIDIA.
+          </p>
+        </SectionReveal>
+      </div>
+
+      {/* Grid of Alumni */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {internsData.map((intern, index) => (
+          <SectionReveal key={intern.id} staggerIndex={index}>
+            <div
+              className="craftly-card p-6 sm:p-8 flex flex-col justify-between group h-full"
+              style={{ transitionDelay: `${index * 50}ms` }}
+            >
+              <div>
+                {/* Profile Header */}
+                <div className="flex items-center gap-5 mb-6">
+                  <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 border border-[var(--line)] bg-[#EDEDF0]">
+                    <img
+                      src={intern.image}
+                      alt={intern.name}
+                      className="w-full h-full object-cover portrait-grayscale group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[#F4F4F6] text-[var(--ink)] border border-[var(--line)]">
+                        {intern.term}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-medium font-head text-[var(--ink)] mt-1">
+                      {intern.name}
+                    </h3>
+                    <p className="text-xs text-[var(--ink-2)] font-mono flex items-center gap-1.5 mt-0.5">
+                      <GraduationCap className="w-3.5 h-3.5 text-[var(--ink-3)]" />
+                      {intern.university}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Where they are now pill */}
+                <div className="p-3.5 rounded-2xl bg-[#F8F8FA] border border-[var(--line)] mb-5 flex items-center justify-between">
+                  <div className="text-xs font-mono">
+                    <span className="text-[var(--ink-3)] block text-[10px]">CURRENT TRAJECTORY:</span>
+                    <strong className="text-[var(--ink)] font-semibold">{intern.currentRole}</strong>
+                  </div>
+                  <Building2 className="w-4 h-4 text-[var(--ink-3)] shrink-0" />
+                </div>
+
+                {/* Project Focus & Paper */}
+                <div className="space-y-2 mb-5 text-xs font-mono">
+                  <div className="text-[var(--ink-2)]">
+                    Lab Project: <strong className="text-[var(--ink)]">{intern.project}</strong>
+                  </div>
+                  <div className="text-[var(--ink-2)] flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-[#4F8BFF] shrink-0" />
+                    <span>Resulting Paper: <strong className="text-[var(--ink)]">{intern.paper}</strong></span>
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <blockquote className="rounded-2xl bg-[#FAFAFC] p-4 border-l-2 border-[var(--ink)] text-xs text-[var(--ink-2)] italic font-sans leading-relaxed relative">
+                  <Quote className="w-4 h-4 text-[var(--ink-3)]/30 absolute top-2 right-2" />
+                  "{intern.quote}"
+                </blockquote>
+              </div>
+
+              <div className="pt-4 border-t border-[var(--line)] mt-6 flex items-center justify-between text-xs font-mono text-[var(--ink-3)]">
+                <span>Alumni Network: <strong className="text-emerald-600 font-medium">Verified</strong></span>
+                <span className="text-[var(--ink)] font-semibold">AIR Lab Fellow</span>
+              </div>
+            </div>
+          </SectionReveal>
+        ))}
+      </div>
+
+      {/* Recruitment Callout */}
+      <SectionReveal>
+        <div className="craftly-card p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-left relative overflow-hidden">
+          <div
+            className="absolute -top-12 -right-12 w-64 h-64 rounded-full opacity-25 blur-[60px] pointer-events-none"
+            style={{ background: 'var(--aurora)' }}
+          />
+
+          <div className="relative z-10">
+            <span className="text-xs font-mono uppercase tracking-wider text-[var(--ink-3)] font-semibold mb-2 block">
+              Join the Next Cohort
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-medium font-head text-[var(--ink)] mb-2">
+              Summer 2026 Research Internships
+            </h3>
+            <p className="text-sm text-[var(--ink-2)] max-w-xl font-normal leading-relaxed">
+              Applications open for undergraduate scholars in Computer Science, Software Engineering, and Electrical Engineering. Gain compute access and paper authorship.
+            </p>
+          </div>
+
+          <div className="relative z-10 shrink-0">
+            <Button
+              href="mailto:internships@airlab.neduet.edu.pk?subject=Summer%202026%20Research%20Internship%20Application"
+              variant="primary"
+              size="md"
+              arrow
+            >
+              Apply for Summer '26
+            </Button>
+          </div>
         </div>
-      </motion.div>
+      </SectionReveal>
     </div>
   )
 }

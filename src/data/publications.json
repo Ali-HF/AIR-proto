@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Attention Is All You Still Need: Revisiting Transformers for Urdu NLP",
+    "authors": "Qureshi A., Ahmed B., Khan Z.",
+    "venue": "ACL",
+    "year": 2026,
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Edge-Optimized YOLO for UAV Object Detection",
+    "authors": "Baig I., Tariq U., Raza H.",
+    "venue": "CVPR",
+    "year": 2025,
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "MedScan: Multi-Label Chest X-Ray Classification with Self-Supervised Pretraining",
+    "authors": "Naz S., Farooq H., Malik Z.",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Hybrid LSTM-Transformer for National Grid Demand Forecasting",
+    "authors": "Baig I., Farooq H.",
+    "venue": "ICLR Workshop",
+    "year": 2026,
+    "link": "#"
+  }
+]

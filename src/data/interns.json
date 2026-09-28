@@ -1,68 +1,46 @@
 [
   {
-    "id": "pi1",
-    "name": "Muhammad Ahmed Raza",
-    "email": "raza4520222@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/muhammad-ahmed-raza-8130072bb"
+    "id": "intern-1",
+    "name": "Maria Garcia",
+    "term": "Summer 2025",
+    "project": "Medical Image Segmentation & Diffusion Models",
+    "university": "NED University (BE Computer Science)",
+    "currentRole": "PhD Candidate at MIT CSAIL",
+    "quote": "AIR Lab gave me hands-on access to supercomputing clusters and mentored me into writing my first first-author conference paper.",
+    "paper": "NeurIPS 2025 Workshop on Medical AI",
+    "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80"
   },
   {
-    "id": "pi2",
-    "name": "Wania Manzoor",
-    "email": "manzoor4501868@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/wania-manzoor-"
+    "id": "intern-2",
+    "name": "Alex Johnson",
+    "term": "Summer 2025",
+    "project": "Autonomous Drone Swarm Pathfinding (AgriSwarm)",
+    "university": "FAST-NUCES",
+    "currentRole": "Software Engineer at Google DeepMind",
+    "quote": "The engineering rigour and freedom to test drones in real-world agricultural test fields shaped my entire career trajectory.",
+    "paper": "IEEE ICRA 2025 Poster",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80"
   },
   {
-    "id": "pi3",
-    "name": "Muhammad Zohaib Khan",
-    "email": "khan4504302@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/muhammad-zohaib-khan-3bab09203/"
+    "id": "intern-3",
+    "name": "Khadija Noor",
+    "term": "Winter 2024",
+    "project": "Urdu Morphological Disambiguation Engine",
+    "university": "NED University (BE Software Engg)",
+    "currentRole": "AI Research Engineer at Hugging Face",
+    "quote": "Working alongside Dr. Ayesha taught me the importance of building AI for underrepresented vernacular languages.",
+    "paper": "ACL 2025 System Demonstration",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80"
   },
   {
-    "id": "pi4",
-    "name": "Muhammad Taha",
-    "email": "taha4605051@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/muhammad-taha-5b9546285"
-  },
-  {
-    "id": "pi5",
-    "name": "Abdul Rehman",
-    "email": "rehman4605578@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/abdul-rehman-21a7752a7"
-  },
-  {
-    "id": "pi6",
-    "name": "Fatima Azeemi",
-    "email": "azeemi4502943@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/fatima-azeemi-466988266"
-  },
-  {
-    "id": "pi7",
-    "name": "Muhammad Saim Asim",
-    "email": "asim4606091@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/muhammad-saim-asim-1695b72b8"
-  },
-  {
-    "id": "pi8",
-    "name": "Faisal Shahid",
-    "email": "shahid4500192@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/faisalshahid03/"
-  },
-  {
-    "id": "pi9",
-    "name": "Iqra Iqbal",
-    "email": "iqbal4503948@cloud.neduet.edu.pk",
-    "linkedin": "https://pk.linkedin.com/in/iqra-iqbal-a2234b271"
-  },
-  {
-    "id": "pi10",
-    "name": "Faiq Ahmed",
-    "email": "ahmed4603833@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/faiq-ahmed1/"
-  },
-  {
-    "id": "pi11",
-    "name": "Unaiza Asif",
-    "email": "asif4601743@cloud.neduet.edu.pk",
-    "linkedin": "https://www.linkedin.com/in/unaiza-asif"
+    "id": "intern-4",
+    "name": "Zayd Siddiqui",
+    "term": "Summer 2024",
+    "project": "Sub-Watt Neuromorphic Vision on FPGA",
+    "university": "GIKI",
+    "currentRole": "Hardware Systems Architect at NVIDIA",
+    "quote": "The edge AI hardware prototyping laboratory at AIR is among the best equipped research facilities in the country.",
+    "paper": "IEEE Micro Top Picks Honorable Mention",
+    "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80"
   }
 ]

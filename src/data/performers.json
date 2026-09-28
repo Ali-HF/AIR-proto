@@ -1,1 +1,66 @@
-[]
+[
+  {
+    "id": "perf-1",
+    "rank": 1,
+    "name": "Jane Doe",
+    "role": "Postgraduate Researcher",
+    "month": "September 2026",
+    "title": "Lead Author on UrduLLM-12B Foundation Model",
+    "achievement": "Authored benchmark paper accepted at NeurIPS 2026 and spearheaded the open-source release of the 12B token Urdu benchmark.",
+    "metrics": {
+      "citations": "142+",
+      "modelDownloads": "28.5k",
+      "hIndex": 4
+    },
+    "tags": ["LLMs", "Urdu NLP", "NeurIPS '26"],
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+  },
+  {
+    "id": "perf-2",
+    "rank": 2,
+    "name": "Bilal Ahmed",
+    "role": "MS Scholar & Edge AI Lead",
+    "month": "August 2026",
+    "title": "60 FPS EdgeVision Deployment at Karachi Intersections",
+    "achievement": "Successfully designed and deployed sub-5W FPGA-accelerated computer vision models for Karachi smart city transit monitoring.",
+    "metrics": {
+      "citations": "86+",
+      "fps": "60 FPS @ 5W",
+      "patents": 1
+    },
+    "tags": ["Edge AI", "FPGA", "Smart Cities"],
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80"
+  },
+  {
+    "id": "perf-3",
+    "rank": 3,
+    "name": "Zara Malik",
+    "role": "Undergraduate Researcher",
+    "month": "July 2026",
+    "title": "AgriSwarm UAV Multispectral Perception",
+    "achievement": "Developed autonomous drone swarm algorithms with 98.2% crop anomaly localization precision across Sindh agricultural zones.",
+    "metrics": {
+      "citations": "34+",
+      "accuracy": "98.2%",
+      "flightHours": "200+ hrs"
+    },
+    "tags": ["Robotics", "Autonomous UAV", "Precision Agriculture"],
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+  },
+  {
+    "id": "perf-4",
+    "rank": 4,
+    "name": "Usman Tariq",
+    "role": "PhD Candidate",
+    "month": "June 2026",
+    "title": "Real-time SLAM in Zero-GPS Tunnel Environments",
+    "achievement": "Breakthrough in LiDAR-inertial odometry for subterranean search-and-rescue robotics, published in IEEE Transactions on Robotics.",
+    "metrics": {
+      "citations": "190+",
+      "drift": "< 0.05%",
+      "hIndex": 6
+    },
+    "tags": ["SLAM", "LiDAR", "IEEE TRO"],
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+  }
+]

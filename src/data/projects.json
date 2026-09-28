@@ -1,1 +1,79 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "UrduBERT: Transformer for Regional Languages",
+    "category": "Funded",
+    "description": "A BERT-based foundation model fine-tuned on 40M+ tokens of Urdu corpus from newspapers, social media, and literature, achieving SOTA on downstream NLP tasks.",
+    "supervisor": "Dr. Ayesha Qureshi",
+    "funding": "HEC NRPU Grant",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80",
+    "metric": "+34% F1 Score"
+  },
+  {
+    "id": 2,
+    "title": "RoboSight: Real-Time Object Detection for Drones",
+    "category": "R&D",
+    "description": "Lightweight YOLOv8-based pipeline deployed on edge hardware for autonomous aerial reconnaissance with sub-20ms inference latency.",
+    "supervisor": "Dr. Imran Baig",
+    "funding": "Internal Lab Budget",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1527430253228-e93688616381?w=600&q=80",
+    "metric": "<20ms Latency"
+  },
+  {
+    "id": 3,
+    "title": "MedScan AI: Chest X-Ray Pathology Detection",
+    "category": "Funded",
+    "description": "Deep learning model trained on CheXNet benchmarks to detect 14 thoracic pathologies from chest radiographs with radiologist-level accuracy.",
+    "supervisor": "Dr. Sadia Naz",
+    "funding": "Ignite NCBC Grant",
+    "status": "Completed",
+    "image": "https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80",
+    "metric": "94.2% AUC"
+  },
+  {
+    "id": 4,
+    "title": "SmartGrid AI: Demand Forecasting",
+    "category": "R&D",
+    "description": "An LSTM-Transformer hybrid model for predicting peak electricity demand in Pakistan's national grid to optimize load balancing.",
+    "supervisor": "Dr. Imran Baig",
+    "funding": "Internal Lab Budget",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
+    "metric": "±3.1% MAPE"
+  },
+  {
+    "id": 5,
+    "title": "Automated Plagiarism Detection for Urdu Text",
+    "category": "Undergraduate",
+    "description": "FYDP leveraging semantic embeddings to detect paraphrased and cross-lingual plagiarism in Urdu academic documents.",
+    "supervisor": "Dr. Ayesha Qureshi",
+    "funding": "FYDP",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80",
+    "metric": "88% Precision"
+  },
+  {
+    "id": 6,
+    "title": "Sign Language Interpreter using MediaPipe",
+    "category": "Undergraduate",
+    "description": "Real-time Pakistani Sign Language recognition system using hand landmark detection and a custom gesture classifier.",
+    "supervisor": "Dr. Sadia Naz",
+    "funding": "FYDP",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80",
+    "metric": "92% Accuracy"
+  },
+  {
+    "id": 7,
+    "title": "Generative Scene Synthesis for Autonomous Vehicles",
+    "category": "Postgraduate",
+    "description": "MS thesis developing a diffusion model-based synthetic data pipeline for training autonomous vehicle perception systems in low-resource settings.",
+    "supervisor": "Dr. Imran Baig",
+    "funding": "HEC Indigenous PhD",
+    "status": "Active",
+    "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80",
+    "metric": "FID Score: 18.4"
+  }
+]

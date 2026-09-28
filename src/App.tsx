@@ -1,23 +1,21 @@
-import { ThemeProvider } from "./components/ThemeProvider"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Layout } from "./components/Layout"
-import { CustomCursor } from "./components/CustomCursor"
+import { HashRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from './components/ThemeProvider'
+import Layout from './components/Layout'
+import CustomCursor from './components/CustomCursor'
+import Home from './pages/Home'
+import About from './pages/About'
+import Team from './pages/Team'
+import Projects from './pages/Projects'
+import Publications from './pages/Publications'
+import Gallery from './pages/Gallery'
+import Performers from './pages/Performers'
+import Collaborations from './pages/Collaborations'
+import Interns from './pages/Interns'
 
-// Lazy load or import pages
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Team from "./pages/Team"
-import Projects from "./pages/Projects"
-import Publications from "./pages/Publications"
-import Gallery from "./pages/Gallery"
-import Performers from "./pages/Performers"
-import Interns from "./pages/Interns"
-import Collaborations from "./pages/Collaborations"
-
-function App() {
+export default function App() {
   return (
-    <ThemeProvider defaultTheme="theme-paper-lab">
-      <Router basename="/">
+    <ThemeProvider>
+      <HashRouter>
         <CustomCursor />
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -28,13 +26,12 @@ function App() {
             <Route path="publications" element={<Publications />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="performers" element={<Performers />} />
-            <Route path="interns" element={<Interns />} />
             <Route path="collaborations" element={<Collaborations />} />
+            <Route path="interns" element={<Interns />} />
+            <Route path="*" element={<Home />} />
           </Route>
         </Routes>
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   )
 }
-
-export default App

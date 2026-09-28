@@ -1,89 +1,186 @@
-import { motion } from "framer-motion"
-import { ArrowRight, BookOpen, Building2, Globe2 } from "lucide-react"
+import { Brain, Handshake, Target, Globe, ShieldCheck } from 'lucide-react'
+import Badge from '../components/ui/Badge'
+import SectionReveal from '../components/ui/SectionReveal'
 
 export default function About() {
+  const pillars = [
+    {
+      title: 'Theoretical Exploration & Applied AI',
+      desc: 'Advancing foundational methodologies across deep neural networks, large language models, computer vision, and autonomous systems with mathematical rigor.',
+      icon: Brain,
+      tag: 'Foundational',
+    },
+    {
+      title: 'Bridging Academia & Industry',
+      desc: 'Active enterprise co-development, sponsored research projects, technology transfer, and commercial-grade deployment testbeds.',
+      icon: Handshake,
+      tag: 'Knowledge Transfer',
+    },
+    {
+      title: 'Robust, Ethical & Explainable Systems',
+      desc: 'Engineering systems with strict safety guarantees, mathematical alignment, fair representation, and transparent explainability.',
+      icon: ShieldCheck,
+      tag: 'AI Governance',
+    },
+    {
+      title: 'Capacity Building & National Ecosystem',
+      desc: 'Hosting technical workshops, specialized bootcamps, and open research access to nurture top engineering talent in Pakistan.',
+      icon: Globe,
+      tag: 'Community',
+    },
+  ]
+
   return (
-    <div className="container mx-auto px-6 py-24 min-h-[calc(100vh-4rem)] flex flex-col justify-center max-w-5xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border bg-muted/50 text-xs font-mono font-medium text-primary mb-6">
-          <span className="w-2 h-2 rounded-full bg-primary" />
-          NED University of Engineering & Technology
-        </div>
+    <div className="min-h-screen pt-16 sm:pt-24 pb-28 px-6 max-w-[1200px] mx-auto relative font-sans">
+      {/* Header */}
+      <div className="mb-16 text-left max-w-3xl">
+        <SectionReveal delay={0}>
+          <div className="mb-4">
+            <Badge variant="white" icon={<Brain className="w-3.5 h-3.5" />}>
+              NED UNIVERSITY · CSIT
+            </Badge>
+          </div>
+        </SectionReveal>
 
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          About AIR Lab
-        </h1>
-        <p className="text-primary font-mono text-sm md:text-base font-semibold mb-10">
-          Department of Computer Science & Information Technology
-        </p>
+        <SectionReveal delay={0.08}>
+          <h1 className="font-head font-medium text-[var(--ink)] mb-4 tracking-tight">
+            About AIR Lab
+          </h1>
+        </SectionReveal>
 
-        <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-          <p>
-            The Artificial Intelligence Research Lab (AIR Lab) at the Department of Computer Science & Information Technology, NED University of Engineering & Technology, is established with the vision of advancing cutting-edge research in Artificial Intelligence and translating innovation into real-world impact. AIR Lab serves as a hub for theoretical exploration, applied research, and interdisciplinary collaboration in modern AI. Our research focuses on developing intelligent systems that are robust, ethical, explainable, and scalable, addressing challenges across academia, industry, and society. By combining strong foundations in computer science with contemporary AI methodologies, we aim to push the boundaries of what intelligent systems can achieve.
+        <SectionReveal delay={0.16}>
+          <p className="text-[17px] sm:text-[18px] text-[var(--ink-2)] leading-relaxed font-normal">
+            Pioneering artificial intelligence research, academia-industry innovation, and capacity building at NED University of Engineering & Technology.
           </p>
+        </SectionReveal>
+      </div>
 
-          <p>
-            A core objective of AIR Lab is to bridge the gap between academia and industry. We actively collaborate with industry partners to solve real-world problems, enabling knowledge transfer, applied innovation, and workforce development. Through joint projects, sponsored research, and student involvement, the lab contributes practical AI solutions while preparing skilled graduates for the evolving technological landscape. Beyond research, AIR Lab is committed to community engagement and capacity building. The lab promotes AI awareness through workshops, seminars, training programs, and open research initiatives, fostering an ecosystem of learning and innovation within and beyond the university.
-          </p>
+      {/* ── Three official paragraphs as three white/frosted cards (28px radius) with a faint aurora corner bloom (top-right, blur 60px, 25% opacity) ── */}
+      <div className="space-y-8 mb-24">
+        {/* Paragraph 1: Foundational Vision */}
+        <SectionReveal delay={0.05}>
+          <div className="craftly-card p-8 sm:p-12 relative overflow-hidden group">
+            {/* Faint aurora corner bloom (top-right, blur 60px, 25% opacity) */}
+            <div
+              className="absolute -top-12 -right-12 w-64 h-64 rounded-full pointer-events-none opacity-25 blur-[60px]"
+              style={{ background: 'var(--aurora)' }}
+              aria-hidden="true"
+            />
 
-          <p>
-            By nurturing talent, encouraging collaboration, and pursuing impactful research, the Artificial Intelligence Research Lab aspires to play a meaningful role in shaping the future of AI in Pakistan and contributing to the global AI research community.
-          </p>
-        </div>
+            <div className="max-w-4xl relative z-10">
+              <div className="mb-4">
+                <Badge variant="outline" icon={<Target className="w-3.5 h-3.5" />}>
+                  Vision & Foundation
+                </Badge>
+              </div>
 
-        {/* Core Pillars derived from provided content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14 pt-10 border-t">
-          <div className="p-6 rounded-xl border bg-card/60">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-              <BookOpen className="w-5 h-5" />
+              <h2 className="text-[24px] sm:text-[30px] font-medium font-head text-[var(--ink)] mb-4 leading-tight">
+                Advancing Cutting-Edge AI & Translating Innovation
+              </h2>
+
+              <p className="text-[15.5px] sm:text-[16.5px] text-[var(--ink-2)] leading-relaxed font-sans font-normal">
+                The Artificial Intelligence Research Lab (AIR Lab) at the Department of Computer Science & Information Technology, NED University of Engineering & Technology, is established with the vision of advancing cutting-edge research in Artificial Intelligence and translating innovation into real-world impact. AIR Lab serves as a hub for theoretical exploration, applied research, and interdisciplinary collaboration in modern AI. Our research focuses on developing intelligent systems that are robust, ethical, explainable, and scalable, addressing challenges across academia, industry, and society. By combining strong foundations in computer science with contemporary AI methodologies, we aim to push the boundaries of what intelligent systems can achieve.
+              </p>
             </div>
-            <h3 className="font-bold text-lg mb-2">Research & Theory</h3>
-            <p className="text-sm text-muted-foreground">
-              Advancing robust, ethical, explainable, and scalable intelligent systems combining computer science fundamentals with contemporary AI.
+          </div>
+        </SectionReveal>
+
+        {/* Paragraph 2: Academia-Industry Synergy */}
+        <SectionReveal delay={0.1}>
+          <div className="craftly-card p-8 sm:p-12 relative overflow-hidden group">
+            {/* Faint aurora corner bloom */}
+            <div
+              className="absolute -top-12 -right-12 w-64 h-64 rounded-full pointer-events-none opacity-25 blur-[60px]"
+              style={{ background: 'var(--aurora)' }}
+              aria-hidden="true"
+            />
+
+            <div className="max-w-4xl relative z-10">
+              <div className="mb-4">
+                <Badge variant="outline" icon={<Handshake className="w-3.5 h-3.5" />}>
+                  Academia & Industry Bridging
+                </Badge>
+              </div>
+
+              <h2 className="text-[24px] sm:text-[30px] font-medium font-head text-[var(--ink)] mb-4 leading-tight">
+                Practical Solutions, Knowledge Transfer & Capacity Building
+              </h2>
+
+              <p className="text-[15.5px] sm:text-[16.5px] text-[var(--ink-2)] leading-relaxed font-sans font-normal">
+                A core objective of AIR Lab is to bridge the gap between academia and industry. We actively collaborate with industry partners to solve real-world problems, enabling knowledge transfer, applied innovation, and workforce development. Through joint projects, sponsored research, and student involvement, the lab contributes practical AI solutions while preparing skilled graduates for the evolving technological landscape. Beyond research, AIR Lab is committed to community engagement and capacity building. The lab promotes AI awareness through workshops, seminars, training programs, and open research initiatives, fostering an ecosystem of learning and innovation within and beyond the university.
+              </p>
+            </div>
+          </div>
+        </SectionReveal>
+
+        {/* Paragraph 3: Future Aspirations & Pakistan AI Frontier */}
+        <SectionReveal delay={0.15}>
+          <div className="craftly-card p-8 sm:p-12 relative overflow-hidden group">
+            {/* Faint aurora corner bloom */}
+            <div
+              className="absolute -top-12 -right-12 w-64 h-64 rounded-full pointer-events-none opacity-25 blur-[60px]"
+              style={{ background: 'var(--aurora)' }}
+              aria-hidden="true"
+            />
+
+            <div className="max-w-4xl relative z-10">
+              <div className="mb-4">
+                <Badge variant="outline" icon={<Globe className="w-3.5 h-3.5" />}>
+                  Global Impact & National Leadership
+                </Badge>
+              </div>
+
+              <h2 className="text-[24px] sm:text-[30px] font-medium font-head text-[var(--ink)] mb-4 leading-tight">
+                Shaping the Future of AI in Pakistan
+              </h2>
+
+              <p className="text-[15.5px] sm:text-[16.5px] text-[var(--ink-2)] leading-relaxed font-sans font-normal">
+                By nurturing talent, encouraging collaboration, and pursuing impactful research, the Artificial Intelligence Research Lab aspires to play a meaningful role in shaping the future of AI in Pakistan and contributing to the global AI research community.
+              </p>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+
+      {/* ── 4 Core Pillars Grid ── */}
+      <div>
+        <SectionReveal>
+          <div className="mb-10 text-left">
+            <h2 className="font-head font-medium text-[var(--ink)] mb-2 tracking-tight">
+              Core Pillars of Excellence
+            </h2>
+            <p className="text-[16px] text-[var(--ink-2)]">
+              The fundamental research disciplines steering AIR Lab's ongoing and upcoming programs.
             </p>
           </div>
+        </SectionReveal>
 
-          <div className="p-6 rounded-xl border bg-card/60">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-              <Building2 className="w-5 h-5" />
-            </div>
-            <h3 className="font-bold text-lg mb-2">Academia-Industry Bridge</h3>
-            <p className="text-sm text-muted-foreground">
-              Solving real-world problems through joint sponsored projects, workforce development, and practical AI solutions.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-xl border bg-card/60">
-            <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-              <Globe2 className="w-5 h-5" />
-            </div>
-            <h3 className="font-bold text-lg mb-2">Capacity Building</h3>
-            <p className="text-sm text-muted-foreground">
-              Workshops, seminars, training programs, and open research initiatives fostering learning and innovation across Pakistan.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {pillars.map((pillar, i) => {
+            const Icon = pillar.icon
+            return (
+              <SectionReveal key={i} staggerIndex={i}>
+                <div className="craftly-card p-6 flex flex-col justify-between h-full group">
+                  <div>
+                    <div className="w-11 h-11 rounded-xl bg-[#F4F4F6] border border-[var(--line)] flex items-center justify-center text-[var(--ink)] group-hover:bg-[#EBEBEF] transition-colors mb-4">
+                      <Icon className="w-5 h-5 text-[var(--ink)]" />
+                    </div>
+                    <span className="text-[11px] font-mono text-[var(--ink-3)] uppercase tracking-wider block mb-1">
+                      {pillar.tag}
+                    </span>
+                    <h3 className="text-[17px] font-medium font-head text-[var(--ink)] mb-2 leading-snug">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-[13.5px] text-[var(--ink-2)] leading-relaxed font-sans font-normal">
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </div>
+              </SectionReveal>
+            )
+          })}
         </div>
-
-        <div className="mt-12 flex flex-wrap gap-4">
-          <a
-            href="/team"
-            className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
-          >
-            Meet Our Team <ArrowRight className="ml-1.5 w-4 h-4" />
-          </a>
-          <span className="text-muted-foreground">•</span>
-          <a
-            href="/interns"
-            className="inline-flex items-center text-sm font-semibold text-primary hover:underline"
-          >
-            Previous Research Interns <ArrowRight className="ml-1.5 w-4 h-4" />
-          </a>
-        </div>
-      </motion.div>
+      </div>
     </div>
   )
 }

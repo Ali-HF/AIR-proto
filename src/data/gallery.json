@@ -1,1 +1,56 @@
-[]
+[
+  {
+    "id": "g-1",
+    "title": "Supercomputer Rack Installation & GPU Clustering",
+    "cat": "Infrastructure",
+    "date": "August 2026",
+    "desc": "Commissioning of the dual 8x NVIDIA H100 SXM5 compute nodes at the AIR High Performance Compute Centre.",
+    "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80",
+    "span": "md:col-span-2 md:row-span-2"
+  },
+  {
+    "id": "g-2",
+    "title": "Autonomous UAV Multi-Agent Swarm Testing",
+    "cat": "Robotics",
+    "date": "July 2026",
+    "desc": "Autonomous outdoor formation flight testing over agricultural testbeds at NED Main Campus.",
+    "url": "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800&q=80",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "g-3",
+    "title": "Annual AI Colloquium & Keynote Sessions",
+    "cat": "Events",
+    "date": "May 2026",
+    "desc": "Keynote addresses and paper presentations with international visiting scholars from Stanford and Oxford.",
+    "url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80",
+    "span": "md:col-span-1 md:row-span-2"
+  },
+  {
+    "id": "g-4",
+    "title": "Embedded Edge AI Hardware Prototyping",
+    "cat": "Hardware",
+    "date": "April 2026",
+    "desc": "Soldering and logic analysis for real-time Jetson Orin edge boards and custom FPGA camera daughterboards.",
+    "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "g-5",
+    "title": "Deep Learning Hackathon 48-Hour Sprint",
+    "cat": "Hackathons",
+    "date": "March 2026",
+    "desc": "Undergraduate student teams competing to fine-tune compact language models on resource-efficient hardware.",
+    "url": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80",
+    "span": "md:col-span-1 md:row-span-1"
+  },
+  {
+    "id": "g-6",
+    "title": "Delegation from National Technology Fund",
+    "cat": "Delegations",
+    "date": "January 2026",
+    "desc": "Federal ministers and industry leaders evaluating live demo of the EdgeVision Smart City traffic AI platform.",
+    "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=900&q=80",
+    "span": "md:col-span-2 md:row-span-1"
+  }
+]
