@@ -210,3 +210,10 @@
     filter: grayscale(0%) contrast(1.05);
   }
 }
+
+/* Hide default cursor on desktop for custom hollow cursor */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

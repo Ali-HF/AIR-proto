@@ -4,13 +4,15 @@ import { useEffect, useState } from 'react'
 export function CustomCursor() {
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
-  
-  // Spring physics for the outer ring lag effect from Ali's prototype
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 }
+
+  // Spring physics for the outer ring lag with snappy haptic response
+  const springConfig = { damping: 22, stiffness: 350, mass: 0.45 }
   const cursorXSpring = useSpring(cursorX, springConfig)
   const cursorYSpring = useSpring(cursorY, springConfig)
 
   const [isHovering, setIsHovering] = useState(false)
+  const [isClicking, setIsClicking] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     // Only run on desktop/devices with a fine pointer
@@ -20,19 +22,21 @@ export function CustomCursor() {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX)
       cursorY.set(e.clientY)
+      if (!isVisible) setIsVisible(true)
     }
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null
       if (!target) return
 
-      // Check if we are hovering over an interactive element
+      // Check if hovering over an interactive element
       if (
         target.tagName.toLowerCase() === 'a' ||
         target.tagName.toLowerCase() === 'button' ||
         target.closest('a') ||
         target.closest('button') ||
         target.getAttribute('role') === 'button' ||
+        target.classList.contains('cursor-pointer') ||
         window.getComputedStyle(target).cursor === 'pointer'
       ) {
         setIsHovering(true)
@@ -41,44 +45,95 @@ export function CustomCursor() {
       }
     }
 
+    const handleMouseDown = () => {
+      setIsClicking(true)
+      // Haptic tactile pulse for supported browsers/hardware
+      if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
+        try {
+          navigator.vibrate(12)
+        } catch (_) {}
+      }
+    }
+
+    const handleMouseUp = () => {
+      setIsClicking(false)
+    }
+
+    const handleMouseLeave = () => {
+      setIsVisible(false)
+    }
+
     window.addEventListener('mousemove', moveCursor)
     window.addEventListener('mouseover', handleMouseOver)
+    window.addEventListener('mousedown', handleMouseDown)
+    window.addEventListener('mouseup', handleMouseUp)
+    document.addEventListener('mouseleave', handleMouseLeave)
 
     return () => {
       window.removeEventListener('mousemove', moveCursor)
       window.removeEventListener('mouseover', handleMouseOver)
+      window.removeEventListener('mousedown', handleMouseDown)
+      window.removeEventListener('mouseup', handleMouseUp)
+      document.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [cursorX, cursorY])
+  }, [cursorX, cursorY, isVisible])
 
-  // Don't render on mobile devices
+  // Don't render on touch / mobile devices
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
     return null
   }
 
+  // Calculate dynamic scale with haptic feedback recoil on click
+  let targetScale = 1
+  if (isHovering && isClicking) {
+    targetScale = 1.25 // haptic compression while hovering
+  } else if (isHovering) {
+    targetScale = 1.65 // expansive hover ring
+  } else if (isClicking) {
+    targetScale = 0.75 // haptic recoil click snap
+  }
+
   return (
     <>
-      {/* Small Dot (Instant) */}
+      {/* ── Center Dot: Precision target matching color theme ── */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference -ml-1 -mt-1"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] -ml-1 -mt-1"
         style={{
           x: cursorX,
           y: cursorY,
+          backgroundColor: '#4F8BFF',
+          boxShadow: '0 0 8px rgba(79, 139, 255, 0.75)',
+          opacity: isVisible ? 1 : 0,
         }}
+        animate={{
+          scale: isClicking ? 0.6 : isHovering ? 1.2 : 1,
+        }}
+        transition={{ duration: 0.1, ease: 'easeOut' }}
       />
-      
-      {/* Outer Ring (Spring physics from Ali's prototype) */}
+
+      {/* ── Outer Ring: Completely HOLLOW with crisp outline of the color theme & haptic spring recoil ── */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-white rounded-full pointer-events-none z-[9998] mix-blend-difference -ml-4 -mt-4 flex items-center justify-center"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998] -ml-4 -mt-4 flex items-center justify-center"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
+          backgroundColor: 'transparent', // STRICTLY HOLLOW
+          border: '1.75px solid #4F8BFF', // Outline of the color theme
+          boxShadow: isHovering
+            ? '0 0 16px rgba(79, 139, 255, 0.55), inset 0 0 6px rgba(79, 139, 255, 0.2)'
+            : '0 0 8px rgba(79, 139, 255, 0.35)',
+          opacity: isVisible ? 1 : 0,
         }}
         animate={{
-          scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0)',
-          opacity: isHovering ? 0.8 : 1,
+          scale: targetScale,
+          borderColor: isClicking ? '#8B7BFF' : '#4F8BFF',
         }}
-        transition={{ duration: 0.15, ease: 'easeOut' }}
+        transition={{
+          type: 'spring',
+          damping: 20,
+          stiffness: 420,
+          mass: 0.4,
+        }}
       />
     </>
   )

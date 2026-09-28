@@ -12,7 +12,7 @@ interface ParticleNode {
 export const ParticleField: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const location = useLocation()
-  
+
   // Track location and scroll to adjust hero multiplier
   const isHomeRef = useRef<boolean>(location.pathname === '/')
   const targetMultiplierRef = useRef<number>(location.pathname === '/' ? 1.25 : 1.0)
@@ -20,6 +20,7 @@ export const ParticleField: React.FC = () => {
   const rafIdRef = useRef<number | null>(null)
   const lastTimeRef = useRef<number>(0)
   const isRunningRef = useRef<boolean>(true)
+  const mousePosRef = useRef<{ x: number; y: number } | null>(null)
 
   // Update target multiplier on route change
   useEffect(() => {
@@ -57,8 +58,23 @@ export const ParticleField: React.FC = () => {
       }
     }
 
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePosRef.current = { x: e.clientX, y: e.clientY }
+    }
+
+    const handleMouseLeave = () => {
+      mousePosRef.current = null
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    document.addEventListener('mouseleave', handleMouseLeave)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseleave', handleMouseLeave)
+    }
   }, [])
 
   useEffect(() => {
@@ -87,17 +103,17 @@ export const ParticleField: React.FC = () => {
 
       const area = width * height
       const isMobile = width < 640
-      // 1 node per ~14,000px^2, capped at 90 desktop, 40 mobile
-      const targetCount = Math.min(isMobile ? 40 : 90, Math.max(18, Math.floor(area / 14000)))
+      // 1 node per ~12,000px^2, capped at 95 desktop, 45 mobile
+      const targetCount = Math.min(isMobile ? 45 : 95, Math.max(22, Math.floor(area / 12000)))
 
       nodes = []
       for (let i = 0; i < targetCount; i++) {
         nodes.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.15,
-          vy: (Math.random() - 0.5) * 0.15,
-          radius: Math.random() * 0.8 + 1.6, // 1.6px - 2.4px
+          vx: (Math.random() - 0.5) * 0.18,
+          vy: (Math.random() - 0.5) * 0.18,
+          radius: Math.random() * 1.0 + 1.8, // 1.8px - 2.8px
         })
       }
     }
@@ -115,7 +131,7 @@ export const ParticleField: React.FC = () => {
 
     // Gaussian-like random jitter
     const getJitter = () => {
-      return (Math.random() + Math.random() + Math.random() - 1.5) * 0.03
+      return (Math.random() + Math.random() + Math.random() - 1.5) * 0.035
     }
 
     const drawFrame = (dt: number) => {
@@ -129,9 +145,9 @@ export const ParticleField: React.FC = () => {
       const currentMultiplier = currentMultiplierRef.current
 
       const isMobile = width < 640
-      const maxDist = isMobile ? 100 : 140
+      const maxDist = isMobile ? 110 : 150
       const maxDistSq = maxDist * maxDist
-      const maxSpeed = 0.25 // max speed clamp (0.25px / frame)
+      const maxSpeed = 0.28 // max speed clamp
       const damping = Math.pow(0.97, dt)
 
       // Update positions with Brownian motion
@@ -177,7 +193,7 @@ export const ParticleField: React.FC = () => {
         }
       }
 
-      // Draw connecting lines within distance threshold
+      // Draw connecting lines between nodes within distance threshold
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[i].x - nodes[j].x
@@ -186,9 +202,9 @@ export const ParticleField: React.FC = () => {
 
           if (distSq < maxDistSq) {
             const dist = Math.sqrt(distSq)
-            const alpha = (1 - dist / maxDist) * 0.18 * currentMultiplier
+            const alpha = (1 - dist / maxDist) * 0.24 * currentMultiplier
             if (alpha > 0.005) {
-              ctx.strokeStyle = `rgba(90, 90, 110, ${alpha.toFixed(3)})`
+              ctx.strokeStyle = `rgba(85, 90, 125, ${alpha.toFixed(3)})`
               ctx.lineWidth = 1
               ctx.beginPath()
               ctx.moveTo(nodes[i].x, nodes[i].y)
@@ -199,9 +215,29 @@ export const ParticleField: React.FC = () => {
         }
       }
 
+      // Draw interactive connections to cursor position if available
+      const mouse = mousePosRef.current
+      if (mouse && !prefersReducedMotion) {
+        const mouseDist = 140
+        for (let i = 0; i < nodes.length; i++) {
+          const dx = nodes[i].x - mouse.x
+          const dy = nodes[i].y - mouse.y
+          const dist = Math.hypot(dx, dy)
+          if (dist < mouseDist) {
+            const alpha = (1 - dist / mouseDist) * 0.35 * currentMultiplier
+            ctx.strokeStyle = `rgba(79, 139, 255, ${alpha.toFixed(3)})` // Aurora blue connection
+            ctx.lineWidth = 1.2
+            ctx.beginPath()
+            ctx.moveTo(nodes[i].x, nodes[i].y)
+            ctx.lineTo(mouse.x, mouse.y)
+            ctx.stroke()
+          }
+        }
+      }
+
       // Draw nodes
-      const nodeAlpha = Math.min(1, 0.45 * currentMultiplier)
-      ctx.fillStyle = `rgba(90, 90, 110, ${nodeAlpha.toFixed(3)})`
+      const nodeAlpha = Math.min(1, 0.55 * currentMultiplier)
+      ctx.fillStyle = `rgba(80, 85, 120, ${nodeAlpha.toFixed(3)})`
 
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i]
@@ -264,7 +300,7 @@ export const ParticleField: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none -z-20 select-none block"
+      className="fixed inset-0 pointer-events-none z-0 select-none block"
       style={{
         width: '100vw',
         height: '100vh',

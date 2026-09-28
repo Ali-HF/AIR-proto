@@ -40,7 +40,7 @@ export default function Layout() {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--ink)] relative selection:bg-[#0B0B0F] selection:text-white font-sans antialiased">
+    <div className="min-h-screen flex flex-col bg-transparent text-[var(--ink)] relative selection:bg-[#0B0B0F] selection:text-white font-sans antialiased">
       {/* ── Single shared ParticleField behind everything ── */}
       <ParticleField />
 
