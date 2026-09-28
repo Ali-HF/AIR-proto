@@ -99,7 +99,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 flex items-center justify-center p-4 rounded-2xl bg-muted/40 border">
               <img
-                src="/AIR-proto/air-lab-mark.svg"
+                src="/air-lab-mark.svg"
                 alt="AIR Lab Emblem"
                 className="w-full h-full object-contain"
               />

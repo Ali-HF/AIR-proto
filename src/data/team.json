@@ -13,7 +13,7 @@
     "phone": "9221-99261261 Ext: 2399",
     "email": "marvi@cloud.neduet.edu.pk",
     "cvUrl": "https://cct.neduet.edu.pk/sites/default/files/csit/CV_new/Marvi25.pdf",
-    "image": "/AIR-proto/pfp/marvi.jpeg"
+    "image": "/pfp/marvi.jpeg"
   },
   {
     "id": "ri1",
@@ -22,7 +22,7 @@
     "category": "Research Interns",
     "email": "khan4731403@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/muhammad-shaheer-86043359/",
-    "image": "/AIR-proto/pfp/shaheer.png"
+    "image": "/pfp/shaheer.png"
   },
   {
     "id": "ri2",
@@ -31,7 +31,7 @@
     "category": "Research Interns",
     "email": "zia4630038@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/kashaf-zia-24774a2ba/",
-    "image": "/AIR-proto/pfp/kashaf.png"
+    "image": "/pfp/kashaf.png"
   },
   {
     "id": "ri3",
@@ -40,7 +40,7 @@
     "category": "Research Interns",
     "email": "yaqoob4705143@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/haseeb-yaqoob-864360287/",
-    "image": "/AIR-proto/pfp/haseeb.png"
+    "image": "/pfp/haseeb.png"
   },
   {
     "id": "ri4",
@@ -49,7 +49,7 @@
     "category": "Research Interns",
     "email": "safee4600033@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/muhammad-umer-safee-b48256296",
-    "image": "/AIR-proto/pfp/umer.png"
+    "image": "/pfp/umer.png"
   },
   {
     "id": "ri5",
@@ -58,7 +58,7 @@
     "category": "Research Interns",
     "email": "shamsi4601801@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/syed-omer-ahmed-shamsi-b3aa6a251",
-    "image": "/AIR-proto/pfp/omer.png"
+    "image": "/pfp/omer.png"
   },
   {
     "id": "ri6",
@@ -67,7 +67,7 @@
     "category": "Research Interns",
     "email": "hashmi4630439@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/syed-shujauddin-hashmi-612050291/",
-    "image": "/AIR-proto/pfp/shujauddin.png"
+    "image": "/pfp/shujauddin.png"
   },
   {
     "id": "ri7",
@@ -76,7 +76,7 @@
     "category": "Research Interns",
     "email": "ahmed4605214@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/syedmuhammedahmed/",
-    "image": "/AIR-proto/pfp/muhammed-ahmed.jpeg"
+    "image": "/pfp/muhammed-ahmed.jpeg"
   },
   {
     "id": "ri8",
@@ -85,7 +85,7 @@
     "category": "Research Interns",
     "email": "tahir4600051@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/roshaantahir/",
-    "image": "/AIR-proto/pfp/roshaan.jpg"
+    "image": "/pfp/roshaan.jpg"
   },
   {
     "id": "ri9",
@@ -94,7 +94,7 @@
     "category": "Research Interns",
     "email": "khan4600572@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/hammad-khan-308395286/",
-    "image": "/AIR-proto/pfp/hammad.jpg"
+    "image": "/pfp/hammad.jpg"
   },
   {
     "id": "ri10",
@@ -103,6 +103,6 @@
     "category": "Research Interns",
     "email": "jafrri4603155@cloud.neduet.edu.pk",
     "linkedin": "https://www.linkedin.com/in/areeba-zehra-jafri",
-    "image": "/AIR-proto/pfp/areeba.jpeg"
+    "image": "/pfp/areeba.jpeg"
   }
 ]

@@ -46,7 +46,7 @@ export function Layout() {
         <div className="container mx-auto px-6 h-16 flex items-center justify-between max-w-7xl">
           <Link to="/" className="text-xl font-bold tracking-tight flex items-center gap-2.5 group">
             <img
-              src="/AIR-proto/air-lab-mark.svg"
+              src="/air-lab-mark.svg"
               alt="AIR Lab Logo"
               className="w-7 h-7 object-contain group-hover:scale-105 transition-transform"
             />
@@ -120,7 +120,7 @@ export function Layout() {
             <div className="col-span-1 md:col-span-2">
               <Link to="/" className="text-xl font-bold tracking-tight flex items-center gap-2.5 mb-4 group">
                 <img
-                  src="/AIR-proto/air-lab-mark.svg"
+                  src="/air-lab-mark.svg"
                   alt="AIR Lab Logo"
                   className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
                 />
